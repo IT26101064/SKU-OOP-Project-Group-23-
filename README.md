@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Member 5: Ticket & Reservation Management Component
 ### SE1020 - Object-Oriented Programming University Project
 
@@ -29,3 +30,6 @@
 2. Select **Git** and click **OK**.
 3. In the top menu, click **Git** &rarr; **GitHub** &rarr; **Share Project on GitHub**.
 4. Enter repository name (e.g., `cinereserve-ticket-booking`), select Public, and click **Share**.
+=======
+# SKU-OOP-Project-Group-23-
+>>>>>>> f62d74b9a450264bf52550b6b991a8c1d39b0036
