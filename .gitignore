@@ -23,8 +23,5 @@
 hs_err_pid*
 replay_pid*
 
-# Maven & IDE
-target/
-*.iml
-.idea/
+
 .DS_Store
