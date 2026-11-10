@@ -1,0 +1,11 @@
+com\cinereserve\movie\repository\MovieRepository.class
+com\cinereserve\movie\model\ImaxMovie.class
+com\cinereserve\movie\model\Movie.class
+com\cinereserve\movie\model\ThreeDMovie.class
+com\cinereserve\movie\util\ValidationUtil.class
+com\cinereserve\movie\service\MovieService.class
+com\cinereserve\movie\repository\FileStorageService.class
+com\cinereserve\movie\repository\Repository.class
+com\cinereserve\movie\model\StandardMovie.class
+com\cinereserve\movie\MovieManagementMain.class
+com\cinereserve\movie\util\StringUtil.class
