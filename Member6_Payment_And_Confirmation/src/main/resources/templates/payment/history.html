@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Member 6 - Payment Transaction History</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>body { background-color: #0b1120; color: #f8fafc; font-family: 'Segoe UI', system-ui, sans-serif; }</style>
+</head>
+<body>
+<div th:replace="~{fragments/navbar :: navbar}"></div>
+
+<div class="container py-5">
+    <div class="d-flex flex-wrap justify-content-between align-items-center mb-4">
+        <div>
+            <span class="badge bg-light text-dark px-3 py-1 mb-2">Member 6 &bull; UI 3 (Read & Refund)</span>
+            <h2 class="fw-bold text-white"><i class="bi bi-receipt text-warning me-2"></i>Financial Transaction Ledger</h2>
+            <p class="text-secondary small mb-0">Total Settled Volume: <strong class="text-success fs-6" th:text="${totalSettled}">$250.00</strong> &bull; <code>data/payments.txt</code></p>
+        </div>
+        <a href="/payments/checkout" class="btn btn-warning fw-bold shadow-sm">
+            <i class="bi bi-credit-card me-1"></i> New Payment Checkout (UI 1)
+        </a>
+    </div>
+
+    <!-- Alert Messages -->
+    <div th:if="${successMessage}" class="alert alert-success alert-dismissible fade show" role="alert">
+        <i class="bi bi-check-circle-fill me-2"></i><span th:text="${successMessage}"></span>
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+    <div th:if="${errorMessage}" class="alert alert-danger alert-dismissible fade show" role="alert">
+        <i class="bi bi-exclamation-triangle-fill me-2"></i><span th:text="${errorMessage}"></span>
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+
+    <!-- Transactions Table -->
+    <div class="card bg-dark border-secondary shadow-lg">
+        <div class="table-responsive">
+            <table class="table table-dark table-hover align-middle mb-0">
+                <thead class="table-secondary text-dark">
+                    <tr>
+                        <th>Transaction Ref</th>
+                        <th>Receipt No</th>
+                        <th>Booking Ref</th>
+                        <th>Payer Name</th>
+                        <th>Method</th>
+                        <th>Total ($)</th>
+                        <th>Status</th>
+                        <th>Timestamp</th>
+                        <th class="text-end">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="p : ${payments}">
+                        <td><code class="text-warning" th:text="${p.transactionReference}">TXN-001</code></td>
+                        <td th:text="${p.receiptNumber}">RCP-001</td>
+                        <td><strong class="text-info" th:text="${p.bookingReference}">CR-001</strong></td>
+                        <td th:text="${p.payerName}">John Doe</td>
+                        <td><span class="badge bg-secondary" th:text="${p.paymentMethod}">CreditCard</span></td>
+                        <td class="text-success fw-bold" th:text="'$' + ${#numbers.formatDecimal(p.finalAmountCharged, 1, 2)}">$24.36</td>
+                        <td>
+                            <span class="badge bg-success" th:if="${p.paymentStatus == 'SUCCESS'}">PAID</span>
+                            <span class="badge bg-danger" th:if="${p.paymentStatus == 'REFUNDED'}">REFUNDED</span>
+                        </td>
+                        <td class="text-secondary small" th:text="${p.timestamp}">2026-11-10</td>
+                        <td class="text-end">
+                            <a th:href="@{'/payments/invoice/' + ${p.bookingReference}}" class="btn btn-sm btn-outline-info me-1">
+                                <i class="bi bi-receipt"></i> Invoice (UI 2)
+                            </a>
+                            <form th:if="${p.paymentStatus == 'SUCCESS'}" th:action="@{'/payments/refund/' + ${p.bookingReference}}" method="POST" class="d-inline" onsubmit="return confirm('Process refund for this payment?');">
+                                <button type="submit" class="btn btn-sm btn-outline-danger">
+                                    <i class="bi bi-arrow-counterclockwise"></i> Refund
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr th:if="${#lists.isEmpty(payments)}">
+                        <td colspan="9" class="text-center py-4 text-secondary">
+                            <i class="bi bi-cash-stack fs-2 d-block mb-2"></i>No payment transactions logged yet.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

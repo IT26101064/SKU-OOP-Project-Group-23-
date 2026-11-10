@@ -29,3 +29,5 @@ Thumbs.db
 .mtj.tmp/
 hs_err_pid*
 replay_pid*
+
+Frontend_And_Web_Layer_Only/

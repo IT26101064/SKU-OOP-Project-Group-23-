@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Member 6 - Cinema Checkout</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>body { background-color: #0b1120; color: #f8fafc; font-family: 'Segoe UI', system-ui, sans-serif; }</style>
+</head>
+<body>
+<div th:replace="~{fragments/navbar :: navbar}"></div>
+
+<div class="container py-5" style="max-width: 650px;">
+    <div class="card bg-dark border-secondary shadow-lg p-4">
+        <div class="card-body">
+            <div class="text-center mb-4">
+                <span class="badge bg-light text-dark px-3 py-1 mb-2">Member 6 &bull; UI 1 (Create)</span>
+                <h2 class="fw-bold text-white"><i class="bi bi-credit-card text-warning me-2"></i>Cinema Checkout Gateway</h2>
+                <p class="text-secondary small">Multi-Provider Payment Hierarchy (Credit Card 1.5% fee, Debit Card 0.5% fee, Digital Wallet 0.0%)</p>
+            </div>
+
+            <!-- Error Alerts -->
+            <div th:if="${errorMessage}" class="alert alert-danger alert-dismissible fade show" role="alert">
+                <i class="bi bi-exclamation-triangle-fill me-2"></i><span th:text="${errorMessage}"></span>
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+
+            <form action="/payments/checkout" method="POST">
+                <div class="p-3 bg-black rounded border border-warning mb-4">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <small class="text-secondary d-block">Booking Reference (From M5)</small>
+                            <strong class="text-warning fs-5" th:text="${bookingRef}">CR-DEMO-001</strong>
+                            <input type="hidden" name="bookingRef" th:value="${bookingRef}">
+                        </div>
+                        <div class="text-end">
+                            <small class="text-secondary d-block">Payable Amount</small>
+                            <strong class="text-success fs-4" th:text="'$' + ${#numbers.formatDecimal(amount, 1, 2)}">$25.00</strong>
+                            <input type="hidden" name="amount" th:value="${amount}">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row g-3">
+                    <div class="col-12">
+                        <label class="form-label text-light">Payer Full Name</label>
+                        <input type="text" name="payerName" class="form-control bg-dark border-secondary text-white" placeholder="Cardholder or Account Name" required>
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label text-light">Select Payment Method (Polymorphic Gateway)</label>
+                        <select name="paymentType" class="form-select bg-dark border-secondary text-white" id="paymentTypeSelect" onchange="togglePaymentFields()">
+                            <option value="CREDIT_CARD">Credit Card (Visa / Mastercard &bull; 1.5% Processing Fee)</option>
+                            <option value="DEBIT_CARD">Debit Card (Direct Bank Transfer &bull; 0.5% Processing Fee)</option>
+                            <option value="WALLET">Digital Wallet (Apple Pay / Google Wallet &bull; 0% Fee)</option>
+                        </select>
+                    </div>
+
+                    <!-- Card Fields -->
+                    <div class="col-12" id="cardFields">
+                        <label class="form-label text-light">Card Number</label>
+                        <input type="text" name="cardNumber" class="form-control bg-dark border-secondary text-white" placeholder="4111 2222 3333 4444" value="4111222233334444">
+                    </div>
+
+                    <!-- Wallet Fields -->
+                    <div class="col-12 d-none" id="walletFields">
+                        <label class="form-label text-light">Digital Wallet Provider</label>
+                        <select name="walletProvider" class="form-select bg-dark border-secondary text-white">
+                            <option value="ApplePay">Apple Pay</option>
+                            <option value="GooglePay">Google Wallet</option>
+                            <option value="PayPal">PayPal Express</option>
+                        </select>
+                    </div>
+
+                    <div class="col-12 mt-4">
+                        <button type="submit" class="btn btn-warning w-100 fw-bold py-2 shadow">
+                            <i class="bi bi-shield-check me-1"></i> Authorize & Complete Payment
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+            <div class="text-center mt-3">
+                <a href="/payments/history" class="text-secondary small text-decoration-none">
+                    <i class="bi bi-arrow-left me-1"></i> View Transaction History (UI 3)
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function togglePaymentFields() {
+        const type = document.getElementById('paymentTypeSelect').value;
+        const cardFields = document.getElementById('cardFields');
+        const walletFields = document.getElementById('walletFields');
+        if (type === 'WALLET') {
+            cardFields.classList.add('d-none');
+            walletFields.classList.remove('d-none');
+        } else {
+            cardFields.classList.remove('d-none');
+            walletFields.classList.add('d-none');
+        }
+    }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

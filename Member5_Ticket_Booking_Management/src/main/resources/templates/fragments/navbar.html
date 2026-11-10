@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head></head>
+<body>
+<nav th:fragment="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top border-bottom border-warning shadow-lg py-3">
+    <div class="container-fluid px-4">
+        <a class="navbar-brand fw-bold fs-3 text-warning d-flex align-items-center" href="/">
+            <i class="bi bi-film me-2"></i>CineReserve <span class="badge bg-danger ms-2 fs-6">OOP Cinema</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#cinemaNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="cinemaNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link text-light fw-semibold" href="/"><i class="bi bi-house-door me-1"></i> Home</a>
+                </li>
+                <!-- Member 1 -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-info fw-semibold" href="#" role="button" data-bs-toggle="dropdown">
+                        <i class="bi bi-people me-1"></i> Users (M1)
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark shadow">
+                        <li><a class="dropdown-item" href="/users"><i class="bi bi-list-ul me-2"></i>User Directory</a></li>
+                        <li><a class="dropdown-item" href="/users/register"><i class="bi bi-person-plus me-2"></i>Register New User</a></li>
+                    </ul>
+                </li>
+                <!-- Member 2 -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-warning fw-semibold" href="#" role="button" data-bs-toggle="dropdown">
+                        <i class="bi bi-camera-reels me-1"></i> Movies (M2)
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark shadow">
+                        <li><a class="dropdown-item" href="/movies"><i class="bi bi-grid me-2"></i>Movie Catalog</a></li>
+                        <li><a class="dropdown-item" href="/movies/add"><i class="bi bi-plus-circle me-2"></i>Add New Movie</a></li>
+                    </ul>
+                </li>
+                <!-- Member 3 -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-success fw-semibold" href="#" role="button" data-bs-toggle="dropdown">
+                        <i class="bi bi-grid-3x3-gap me-1"></i> Seats (M3)
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark shadow">
+                        <li><a class="dropdown-item" href="/seats/layout"><i class="bi bi-tv me-2"></i>Visual Seat Layout</a></li>
+                        <li><a class="dropdown-item" href="/seats/lock"><i class="bi bi-lock me-2"></i>Hold / Lock Seats</a></li>
+                        <li><a class="dropdown-item" href="/seats/halls"><i class="bi bi-building me-2"></i>Cinema Hall Specs</a></li>
+                    </ul>
+                </li>
+                <!-- Member 4 -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-danger fw-semibold" href="#" role="button" data-bs-toggle="dropdown">
+                        <i class="bi bi-clock-history me-1"></i> Showtimes (M4)
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark shadow">
+                        <li><a class="dropdown-item" href="/showtimes"><i class="bi bi-calendar-event me-2"></i>Screening Timetable</a></li>
+                        <li><a class="dropdown-item" href="/showtimes/add"><i class="bi bi-calendar-plus me-2"></i>Schedule Showtime</a></li>
+                    </ul>
+                </li>
+                <!-- Member 5 -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-primary fw-semibold" href="#" role="button" data-bs-toggle="dropdown">
+                        <i class="bi bi-ticket-perforated me-1"></i> Tickets (M5)
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark shadow">
+                        <li><a class="dropdown-item" href="/bookings"><i class="bi bi-journal-text me-2"></i>Customer Bookings</a></li>
+                        <li><a class="dropdown-item" href="/bookings/new"><i class="bi bi-cart-plus me-2"></i>Book New Ticket</a></li>
+                    </ul>
+                </li>
+                <!-- Member 6 -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-light fw-semibold" href="#" role="button" data-bs-toggle="dropdown">
+                        <i class="bi bi-credit-card me-1"></i> Payment (M6)
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark shadow">
+                        <li><a class="dropdown-item" href="/payments/checkout"><i class="bi bi-cash-stack me-2"></i>Checkout Gateway</a></li>
+                        <li><a class="dropdown-item" href="/payments/history"><i class="bi bi-receipt me-2"></i>Payment History & Refunds</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="d-flex align-items-center">
+                <a href="/bookings/new" class="btn btn-warning fw-bold px-3 me-2 shadow-sm">
+                    <i class="bi bi-ticket-detailed me-1"></i> Quick Book
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+</body>
+</html>
