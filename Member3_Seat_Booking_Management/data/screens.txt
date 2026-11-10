@@ -1,0 +1,3 @@
+HAL-001|Cinema Hall 1 (Dolby Atmos)|PREMIUM|8|12|3
+HAL-002|Cinema Hall 2 (Laser Lounge)|STANDARD|8|12|2
+HAL-003|Cinema Hall 3 (Cozy Premium)|PREMIUM|8|12|3
