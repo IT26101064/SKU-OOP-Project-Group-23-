@@ -11,7 +11,7 @@ A complete, enterprise-grade Cinema Reservation, Auditorium Management, and Tick
 |:---:|:---:|:---|:---:|:---|
 | **Member 1** | `IT26101062` | **M. C. Annathugoda** | [@IT26101062](https://github.com/IT26101062) | User Authentication, Customer Profiles & Loyalty Rewards Engine |
 | **Member 2** | `IT26101061` | **Milakshan** | [@IT26101061Milakshan](https://github.com/IT26101061Milakshan) | Movie Catalog, Visual Formats & Cinema Experience Engine |
-| **Member 3 ** | `IT26101064` | **Shanuka Dassanayake** | [@IT26101064](https://github.com/IT26101064) | Cinema Hall Layout, Screen Multipliers & Real-Time Seat Booking Engine |
+| **Member 3** | `IT26101064` | **Shanuka Dassanayake** | [@IT26101064](https://github.com/IT26101064) | Cinema Hall Layout, Screen Multipliers & Real-Time Seat Booking Engine |
 | **Member 4** | `IT26101063` | **Niwandya Karunarathna** | [@IT26101063](https://github.com/IT26101063) | Showtime Scheduling, Screening Slots & Collision Avoidance Engine |
 | **Member 5** | `IT26101065` | **Wanniarachchi W.A.M.P** | [@it26101065](https://github.com/it26101065) | Dynamic Ticket Pricing, Multi-Tier Admission Passes & Customer Booking Engine |
 | **Member 6** | `IT26101066` | **Kavindi Chandrasena** | [@Kavi101066](https://github.com/Kavi101066) | Multi-Gateway Payment Processing, Audit Ledger & Cinema Tax Invoicing |
