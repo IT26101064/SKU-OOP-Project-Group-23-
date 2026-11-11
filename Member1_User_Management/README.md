@@ -1,11 +1,5 @@
 # 👤 User Management Module — Apex Cinema
 
-**Component:** User Authentication & Membership Lifecycle Management  
-**Author / Contributor:** [Your Name / Student ID]  
-**Module Code:** SE1020 — Object-Oriented Programming (OOP)  
-**Architecture:** MVC (Model-View-Controller) with Plain-Text File Persistence  
-
----
 
 ## 📌 1. Component Overview
 The **User Management Module** handles the complete customer identity and account lifecycle within the Apex Cinema Online Booking System. It provides secure account registration, session-based authentication, user profile management with real-time input sanitization, dynamic loyalty tiering, and administrative account oversight.
