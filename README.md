@@ -46,7 +46,7 @@ A complete, enterprise-grade Cinema Reservation, Auditorium Management, and Tick
 
 ---
 
-### 💺 Member 3 (Team Leader): Cinema Hall Layout & Real-Time Seat Booking Engine
+### 💺 Member 3 : Cinema Hall Layout & Real-Time Seat Booking Engine
 * **Assigned Student:** Shanuka Dassanayake (`IT26101064`)
 * **Package:** `com.cinereserve.seat`
 * **Key Components:**
