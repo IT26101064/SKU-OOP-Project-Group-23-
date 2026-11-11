@@ -25,3 +25,13 @@ A comprehensive Cinema Reservation, Auditorium Management, and Ticket Booking Sy
   - Tiered admission passes (`StandardTicket`, `VIPTicket`, `StudentTicket`) using OOP polymorphism.
   - Unique booking reference generation (`CR-YYYYMMDD-XXXX`) and lifecycle state tracking.
   - Local thread-safe text file persistence (`data/bookings.txt`) via generic Repository architecture.
+
+---
+
+## 👤 Member 1: User Management & Tier Loyalty Engine
+- **Assigned Student:** M.C.Annathugoda (`IT26101062`)
+- **Module Responsibilities:**
+  - User registration, salted SHA-256 password hashing, and authentication engine.
+  - Customer profile management, tier upgrades (`REGULAR`, `PREMIUM`, `ADMIN`), and loyalty reward points.
+  - Abstract base class `User` with polymorphic tier discount algorithms (`RegularUser`, `PremiumUser`, `AdminUser`).
+  - Thread-safe repository persistence (`data/users.txt`) with CRUD operations.
