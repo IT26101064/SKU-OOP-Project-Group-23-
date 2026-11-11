@@ -40,8 +40,10 @@ A comprehensive Cinema Reservation, Auditorium Management, and Ticket Booking Sy
 
 ## 🎟️ Member 5: Ticket Pricing & Customer Reservation Management
 - **Assigned Student:** Wanniarachchi W.A.M.P (`IT26101065`)
+- **GitHub Username:** `it26101065`
 - **Module Responsibilities:**
   - Dynamic ticket price calculation with hall multipliers and customer loyalty discounts.
   - Tiered admission passes (`StandardTicket`, `VIPTicket`, `StudentTicket`) using OOP polymorphism.
   - Unique booking reference generation (`CR-YYYYMMDD-XXXX`) and lifecycle state tracking.
   - Local thread-safe text file persistence (`data/bookings.txt`) via generic Repository architecture.
+  - Comprehensive unit test suite verifying pricing models, pass barcodes, and booking states.
