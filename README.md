@@ -18,16 +18,6 @@ A comprehensive Cinema Reservation, Auditorium Management, and Ticket Booking Sy
 
 ---
 
-## 🎟️ Member 5: Ticket Pricing & Customer Reservation Management
-- **Assigned Student:** Wanniarachchi W.A.M.P (`IT26101065`)
-- **Module Responsibilities:**
-  - Dynamic ticket price calculation with hall multipliers and customer loyalty discounts.
-  - Tiered admission passes (`StandardTicket`, `VIPTicket`, `StudentTicket`) using OOP polymorphism.
-  - Unique booking reference generation (`CR-YYYYMMDD-XXXX`) and lifecycle state tracking.
-  - Local thread-safe text file persistence (`data/bookings.txt`) via generic Repository architecture.
-
----
-
 ## 👤 Member 1: User Management & Tier Loyalty Engine
 - **Assigned Student:** M.C.Annathugoda (`IT26101062`)
 - **Module Responsibilities:**
@@ -35,3 +25,23 @@ A comprehensive Cinema Reservation, Auditorium Management, and Ticket Booking Sy
   - Customer profile management, tier upgrades (`REGULAR`, `PREMIUM`, `ADMIN`), and loyalty reward points.
   - Abstract base class `User` with polymorphic tier discount algorithms (`RegularUser`, `PremiumUser`, `AdminUser`).
   - Thread-safe repository persistence (`data/users.txt`) with CRUD operations.
+
+---
+
+## 🕒 Member 4: Showtime Scheduling & Collision Detection Engine
+- **Assigned Student:** Niwandya Karunarathna (`IT26101063`)
+- **Module Responsibilities:**
+  - Automated showtime scheduling with slot collision detection and conflict avoidance algorithms.
+  - Screening time slots (`MatineeShowtime`, `PrimeShowtime`, `StandardShowtime`) using OOP polymorphism.
+  - Hall schedule management, daily screening timetables, and schedule cancellation routines.
+  - Thread-safe repository persistence (`data/showtimes.txt`) with CRUD operations.
+
+---
+
+## 🎟️ Member 5: Ticket Pricing & Customer Reservation Management
+- **Assigned Student:** Wanniarachchi W.A.M.P (`IT26101065`)
+- **Module Responsibilities:**
+  - Dynamic ticket price calculation with hall multipliers and customer loyalty discounts.
+  - Tiered admission passes (`StandardTicket`, `VIPTicket`, `StudentTicket`) using OOP polymorphism.
+  - Unique booking reference generation (`CR-YYYYMMDD-XXXX`) and lifecycle state tracking.
+  - Local thread-safe text file persistence (`data/bookings.txt`) via generic Repository architecture.
