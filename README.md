@@ -51,9 +51,16 @@ A complete, enterprise-grade Cinema Reservation, Auditorium Management, and Tick
 * **Package:** `com.cinereserve.seat`
 * **Key Components:**
   * **Abstract Base Class:** `CinemaHall` with tier multipliers and visual ASCII layout rendering.
-  * **Inherited Subclasses:** `StandardHall` and `PremiumHall`.
+  * **Inherited Subclasses:** `StandardHall` (Multiplier 1.00x) and `PremiumHall` (Multiplier 1.35x with Recliner seats).
   * **Seat Modeling:** `Seat`, `SeatType` (`REGULAR`, `PREMIUM`, `RECLINER`), and dynamic status (`AVAILABLE`, `LOCKED`, `RESERVED`).
-  * **Real-Time Collision Prevention:** Thread-safe seat locking mechanism preventing double-booking race conditions.
+  * **Real-Time Collision Prevention Engine:** Thread-safe seat locking mechanism preventing double-booking race conditions during simultaneous user checkouts.
+  * **ASCII Layout Visualization:** Dynamic console and web layout generator rendering real-time screen and seat status grids:
+    ```text
+    ==================== [ CINEMA SCREEN ] ====================
+    Row A [VIP] : [A1:FREE] [A2:FREE] [A3:LOCK] [A4:RESV] [A5:FREE]
+    Row B [VIP] : [B1:FREE] [B2:FREE] [B3:FREE] [B4:FREE] [B5:FREE]
+    Row C [STD] : [C1:FREE] [C2:FREE] [C3:RESV] [C4:FREE] [C5:FREE]
+    ```
   * **Persistence:** `ScreenRepository` reading/writing to `data/screens.txt`.
   * **Web Endpoints:** `/seats/layout` (Interactive Hall Screen), `/seats/lock` (Hold Seats), `/seats/halls` (Auditorium Registry).
 
